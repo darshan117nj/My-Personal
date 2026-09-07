@@ -1,28 +1,30 @@
-pipeline{
+pipeline {
     agent any
 
-    stages{
-        stage('Host name'){
-            step{
+    stages {
+        stage('Host name') {
+            steps {
                 sh 'hostname'
             }
         }
-        stage('Memory Usage'){
-            step{
+
+        stage('Memory Usage') {
+            steps {
                 sh 'free -h'
             }
         }
 
-        stage('Disk usage'){
-            step{
+        stage('Disk usage') {
+            steps {
                 sh 'df -h'
             }
         }
 
-        stage('CPU details'){
-            step{
+        stage('CPU details') {
+            steps {
                 sh 'lscpu'
             }
         }
     }
 }
+
